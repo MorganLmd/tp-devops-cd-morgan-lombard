@@ -53,6 +53,9 @@ jobs:
       - attach_workspace:
           at: /tmp
       - run:
+          name: install netlify cli
+          command: sudo npm install netlify-cli -g
+      - run:
           name: Deploy app
           command: netlify deploy --prod --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir=public
   back-test-unit:
