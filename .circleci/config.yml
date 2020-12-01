@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  heroku: circleci/heroku@0.0.10
 jobs:
   build:
     docker:
@@ -121,7 +123,7 @@ jobs:
       - checkout
       - run:
           name: Heroku Deploy
-          command: echo todo && false
+          command: heroku/deploy-via-git
       - run:
           name: Smoke Test
           command: echo todo && false
