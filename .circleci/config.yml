@@ -123,7 +123,7 @@ jobs:
       - checkout
       - run:
           name: Heroku Deploy
-          command: heroku/deploy-via-git
+          command: echo todo && false
       - run:
           name: Smoke Test
           command: echo todo && false
@@ -151,7 +151,7 @@ workflows:
           filters:
             branches:
               only: main
-      - back-deploy-heroku:
+      - heroku/deploy-via-git:
           requires:
             - build
             - lint
